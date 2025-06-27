@@ -95,6 +95,9 @@ const SimpleCalendar = () => {
             showAlert("To ensure better use of app, Year number is limited to four digits ")
             return;
         }
+        if (name === "year" && value < 1900 ) {
+            showAlert('Minimal supported number of year is "1900"', "warning");
+            return;
         if (name === "month" && value > 12) {
             showAlert("The month number can never exceed 12", "warning");
             return;
